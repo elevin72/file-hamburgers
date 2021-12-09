@@ -14,4 +14,8 @@ public class Mp3FileDetails extends FileDetails {
     public int getSize() {
         return size;
     }
+
+    public void accept(IVisitor v) {
+        v.visit(this);
+    }
 }

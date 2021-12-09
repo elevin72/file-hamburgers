@@ -22,19 +22,19 @@ public class Main {
         }
     }
     public static FileDetails readFileDetails(String path) throws IOException {
-        Map<String, FileDetails> files = new HashMap();
-        DirectoryDetails root=new DirectoryDetails(null, "root");
+        Map<String, FileDetails> files = new HashMap<String, FileDetails>();
+        DirectoryDetails root = new DirectoryDetails(null, "root");
         files.put("", root);
         Files.lines(Paths.get(path))
                 .map(str -> FileDetailsFactory.getFileDetails(str))
                 .peek(f -> files.put(f.getFullName(),f))
-                .peek(f -> ((DirectoryDetails)files.get(f.getPath())).addFile(f))
+                .peek(f -> ((DirectoryDetails) files.get(f.getPath())).addFile(f))
                 .collect(Collectors.toList());
         return root;
     }
     public static void fileMenu(Scanner scanner) throws IOException {
         String path="files.txt";
-        FileDetails root= readFileDetails(path);
+        FileDetails root = readFileDetails(path);
         System.out.println("Choose from the following options:\n" +
                 "q: quit\n" +
                 "c: countFiles\n" +
@@ -45,6 +45,8 @@ public class Main {
         while (!(myString = scanner.nextLine()).equals("q")){
             switch (myString){
                 case "c":
+                    CounterVisitor v = new CounterVisitor();
+                    v.visit((DirectoryDetails)root);
                     //TODO: Add counting behavior
                     break;
                 case "sz":

@@ -2,6 +2,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class FileDetailsFactory {
+
     private final static String EXTENTION_CAPTURE_PATTERN = "^[^ .]*(\\.[^ ]*)?";
     private final static String MP3_CAPTURE_PATTERN = "(.*/)?([^ /]*) length in seconds: (\\d+), (\\d+) bytes";
     private final static String JPG_CAPTURE_PATTERN = "(.*/)?([^ /]*) (\\d+)x(\\d+), (\\d+) bytes";
@@ -10,6 +11,7 @@ public class FileDetailsFactory {
     private final static String PPTX_CAPTURE_PATTERN = "(.*/)?([^ /]*) slides: (\\d+), (\\d+) bytes";
     private final static String DOCX_CAPTURE_PATTERN = "(.*/)?([^ /]*) words: (\\d+), pages: (\\d+), (\\d+) bytes";
     private final static String DIRECTORY_CAPTURE_PATTERN = "(.*/)?([^ /]*)";
+
     public static FileDetails getFileDetails(String description){
         Matcher matcher;
         switch (getExtension(description)){
