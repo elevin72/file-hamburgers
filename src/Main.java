@@ -46,8 +46,8 @@ public class Main {
             switch (myString){
                 case "c":
                     CounterVisitor v = new CounterVisitor();
-                    v.visit((DirectoryDetails)root);
-                    //TODO: Add counting behavior
+                    root.accept(v);
+                    System.out.println("Files Counted: " + v.counter);
                     break;
                 case "sz":
                     //TODO: Add size calculation behavior

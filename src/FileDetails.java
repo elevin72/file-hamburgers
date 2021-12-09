@@ -25,6 +25,6 @@ public abstract class FileDetails {
         return path;
     }
 
-    public abstract accept(IVisitor v);
+    public abstract void accept(IVisitor v);
 
 }
