@@ -4,37 +4,42 @@ public class ShortRepresentationVisitor implements IVisitor {
 
 	@Override
 	public void visit(DirectoryDetails t) {
-		// TODO Auto-generated method stub
-		
+        System.out.println(t.getName());
 	}
 
 	@Override
 	public void visit(HtmlFileDetails t) {
-		// TODO Auto-generated method stub
+        System.out.println(t.getName());
 		
 	}
 
 	@Override
 	public void visit(JpgFileDetails t) {
-		// TODO Auto-generated method stub
+        System.out.println(t.getName());
 		
 	}
 
 	@Override
 	public void visit(Mp3FileDetails t) {
-		// TODO Auto-generated method stub
+        System.out.println(t.getName());
 		
 	}
 
 	@Override
 	public void visit(PptxFileDetails t) {
-		// TODO Auto-generated method stub
+        System.out.println(t.getName());
 		
 	}
 
 	@Override
 	public void visit(TxtFileDetails t) {
-		// TODO Auto-generated method stub
+        System.out.println(t.getName());
+		
+    }
+
+	@Override
+	public void visit(DocxFileDetails t) {
+        System.out.println(t.getName());
 		
 	}
 }

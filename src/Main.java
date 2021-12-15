@@ -45,18 +45,23 @@ public class Main {
         while (!(myString = scanner.nextLine()).equals("q")){
             switch (myString){
                 case "c":
-                    CounterVisitor v = new CounterVisitor();
-                    root.accept(v);
-                    System.out.println("Files Counted: " + v.counter);
+                    CounterVisitor cv = new CounterVisitor();
+                    root.accept(cv);
+                    System.out.println("Files Counted: " + cv.counter);
                     break;
                 case "sz":
-                    //TODO: Add size calculation behavior
+                    SizeVisitor sv = new SizeVisitor();
+                    root.accept(sv);
+                    System.out.println("Total size in bytes: " + sv.totalSize);
                     break;
                 case "st":
-                    //TODO: Add statistics behavior
+                    StatisticsVisitor st = new StatisticsVisitor();
+                    root.accept(st);
                     break;
                 case "sh":
-                    //TODO: Add short representation behavior
+                    ShortRepresentationVisitor sh = new ShortRepresentationVisitor();
+                    root.accept(sh);
+                    break;
             }
         }
     }

@@ -32,4 +32,10 @@ public class CounterVisitor implements IVisitor {
         counter++;
     }
 
+	@Override
+	public void visit(DocxFileDetails t) {
+        counter++;
+		
+	}
+
 }

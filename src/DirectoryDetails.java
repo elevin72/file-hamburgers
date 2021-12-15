@@ -1,18 +1,19 @@
-import java.util.HashSet;
+import java.util.Vector;
 
-// TODO: Implement Composite (change this file).
 public class DirectoryDetails extends FileDetails {
 
-    private HashSet<FileDetails> files;
+    private Vector<FileDetails> files;
+    public int numFiles = 0;
 
     public DirectoryDetails(String path, String name){
         super(path,name);
-        files = new HashSet<FileDetails>();
+        files = new Vector<FileDetails>();
     }
 
     // composite
     public void addFile(FileDetails fileDetails) {
         files.add(fileDetails);
+        numFiles++;
     }
 
     public void accept(IVisitor v) {
